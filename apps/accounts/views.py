@@ -5,6 +5,8 @@ from .serializers import UserSerializer, UserListSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 
+from django.http import HttpResponseRedirect
+
 from knox.auth import TokenAuthentication
 
 from rest_framework import generics, permissions
@@ -13,7 +15,7 @@ from rest_framework.views import APIView
 
 class RoomAPI(generics.GenericAPIView):
     # This route needs to be protected using a valid token
-    authentication_classes = [BasicAuthentication, SessionAuthentication]
+    authentication_classes = [SessionAuthentication]
     permission_classes = [permissions.IsAuthenticated,]
     serializer_class = UserSerializer
     def get_object(self, request):
@@ -37,6 +39,15 @@ def login(request):
 
 def register(request):
 	return render(request, 'accounts/register.html', {})
+
+def lobby(request):
+    if request.user:
+        queryset = User.objects.filter(id=request.user.pk)
+        if queryset.count() > 0:
+                return HttpResponseRedirect("/home")
+        else:
+                return HttpResponseRedirect("/login")
+
 
 def room(request, user_id):
 	if request.user:

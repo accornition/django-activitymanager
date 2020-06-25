@@ -14,4 +14,5 @@ urlpatterns = [
     path('login', views.login),
     path('register', views.register),
     path('home', views.RoomAPI.as_view()),
+    path('', views.lobby),
 ]
