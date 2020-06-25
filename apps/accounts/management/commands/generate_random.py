@@ -56,6 +56,7 @@ class Command(BaseCommand):
             user, created = User.objects.get_or_create(real_name=random_name, password=random_password, email=random_email, timezone=zone)
             if created:
                 user.is_active = False
+                user.save()
             start = datetime.now(timezone(zone))
             end = start + timedelta(days=1)
             random_date = start + (end - start) * random.random()
