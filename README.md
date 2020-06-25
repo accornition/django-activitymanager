@@ -29,3 +29,13 @@ python manage.py runserver 0.0.0.0:8000
 ```
 
 Now, go to the login page using `http:SERVER_IP:8000/login` and login with any user or admin credentials.
+
+# Demo Application
+
+Server URL Link (Hosted using PythonAnywhere): [http://accornition.pythonanywhere.com](Application Link)
+
+Sample Admin Credentials:
+```
+Email: admin@example.com
+Password: demo
+```
