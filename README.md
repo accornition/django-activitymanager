@@ -39,3 +39,15 @@ Sample Admin Credentials:
 Email: admin@example.com
 Password: demo
 ```
+
+# Structure
+
+The web application is divided into two separate apps - one for performing user related tasks `apps/accounts`, and another app which lists the activity periods (`apps/activitymanager`).
+
+There are two types of users - the admins, and the normal users.
+
+Admins can only be created from the command line, using the custom management command. 
+
+Regular users can be created from the register page directly
+
+Admin users can view all the users, and can view the activity periods or even delete any of them.
