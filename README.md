@@ -32,7 +32,7 @@ Now, go to the login page using `http:SERVER_IP:8000/login` and login with any u
 
 # Demo Application
 
-Server URL Link (Hosted using PythonAnywhere): [http://accornition.pythonanywhere.com](Application Link)
+Server URL Link (Hosted using PythonAnywhere): http://accornition.pythonanywhere.com
 
 Sample Admin Credentials:
 ```
